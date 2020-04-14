@@ -34,7 +34,7 @@ export function getTeam(teamId) {
   });
 }
 
-export function getTeamNames() {
+export function getTeamNames(): Promise<string[]> {
   return new Promise((res) => {
     if (cachedTeamNames === null) {
       cachedTeamNames = Object.keys(teams);
