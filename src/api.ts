@@ -5,9 +5,9 @@ import {
   generateTeamsArticles,
 } from "./dummy-data";
 
-let cachedPlayers = null;
-let cachedTeams = {};
-let cachedTeamNames = null;
+let cachedPlayers: any = null;
+let cachedTeams: any = {};
+let cachedTeamNames: any = null;
 
 export function getPlayers(teamId) {
   return new Promise((res) => {
