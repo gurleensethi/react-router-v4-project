@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactSVGElement } from "react";
 
 const logos = {
   bulls: (
@@ -1030,9 +1030,9 @@ const logos = {
   ),
 };
 
-export const TeamLogo: FunctionComponent<{ id: string; width?: string }> = (
-  props
-) => {
+export const TeamLogo: FunctionComponent<
+  React.SVGAttributes<SVGSVGElement> & { id: string; width?: string }
+> = (props) => {
   return (
     <svg {...props} x="0px" y="0px" viewBox="0 0 125.397 125.397">
       {logos[props.id]}

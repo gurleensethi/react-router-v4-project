@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import { getPlayers } from "../api";
 import { RouteComponentProps, Route, Link } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
-import { loadavg } from "os";
 import slug from "slug";
 
 export const Players: FunctionComponent<RouteComponentProps> = (props) => {
@@ -13,9 +12,7 @@ export const Players: FunctionComponent<RouteComponentProps> = (props) => {
       setPlayers(players);
       setLoading(false);
     });
-  }, []);
-
-  console.log(props.match.path);
+  }, [props.location.search]);
 
   return (
     <div className="container two-column">
