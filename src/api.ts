@@ -9,7 +9,7 @@ let cachedPlayers: any = null;
 let cachedTeams: any = {};
 let cachedTeamNames: any = null;
 
-export function getPlayers(teamId) {
+export function getPlayers(teamId): Promise<any[]> {
   return new Promise((res) => {
     if (cachedPlayers === null) {
       cachedPlayers = players;
