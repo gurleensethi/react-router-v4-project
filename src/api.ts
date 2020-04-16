@@ -51,7 +51,7 @@ export function getArticle(teamId, id) {
   });
 }
 
-export function getTeamsArticles(teamId) {
+export function getTeamsArticles(teamId): Promise<any[]> {
   return new Promise((res) => {
     setTimeout(() => res(generateTeamsArticles(teamId)), 700);
   });

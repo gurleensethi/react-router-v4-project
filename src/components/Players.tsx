@@ -3,12 +3,13 @@ import { getPlayers } from "../api";
 import { RouteComponentProps, Route, Link } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 import slug from "slug";
+import { parse } from "query-string";
 
 export const Players: FunctionComponent<RouteComponentProps> = (props) => {
   const [players, setPlayers] = React.useState<any[]>([]);
   const [isLoading, setLoading] = React.useState<boolean>(true);
   React.useEffect(() => {
-    getPlayers(props.location.search).then((players) => {
+    getPlayers(parse(props.location.search).teamId).then((players) => {
       setPlayers(players);
       setLoading(false);
     });
