@@ -26,7 +26,7 @@ export class TeamPage extends Component<
       getTeamNames(),
       getTeamsArticles(this.props.match.params.teamId),
     ]).then(([teamNames, articles]) => {
-      this.setState(() => ({ loading: false, articles }));
+      this.setState(() => ({ loading: false, articles, teamNames }));
     });
   }
 
