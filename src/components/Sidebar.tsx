@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Route, Link, withRouter, RouteComponentProps } from "react-router-dom";
 import slug from "slug";
+import { Loading } from "./Loading";
 
 interface Props {
   title: string;
@@ -35,7 +36,7 @@ export const Sidebar = withRouter(
     render() {
       const { title, list, loading, location, match } = this.props;
       return loading === true ? (
-        <h1>LOADING</h1>
+        <Loading></Loading>
       ) : (
         <div>
           <h3 className="header">{title}</h3>

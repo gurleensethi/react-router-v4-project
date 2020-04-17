@@ -3,6 +3,7 @@ import { getTeamsArticles } from "../api";
 import { Sidebar } from "./Sidebar";
 import { RouteComponentProps, Route } from "react-router-dom";
 import { Article } from "./Article";
+import { Loading } from "./Loading";
 
 export class Articles extends Component<
   RouteComponentProps<{ teamId: string }>,
@@ -42,7 +43,7 @@ export class Articles extends Component<
             <Article articleId={match.params.articleId} teamId={teamId}>
               {(article) =>
                 !article ? (
-                  <h1>Loading..</h1>
+                  <Loading></Loading>
                 ) : (
                   <article className="artilce" key={article.id}>
                     <h1 className="header">{article.title}</h1>

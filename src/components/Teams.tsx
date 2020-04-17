@@ -4,6 +4,7 @@ import { RouteComponentProps, Route, Link } from "react-router-dom";
 import { getTeamNames } from "../api";
 import { TeamLogo } from "./TeamLogo";
 import { Team } from "./Team";
+import { Loading } from "./Loading";
 
 export const Teams: FunctionComponent<RouteComponentProps> = (props) => {
   const [teams, setTeams] = React.useState<any[]>([]);
@@ -39,7 +40,7 @@ export const Teams: FunctionComponent<RouteComponentProps> = (props) => {
               <Team id={teamId}>
                 {(team) =>
                   team === null ? (
-                    <h1>LOADING</h1>
+                    <Loading></Loading>
                   ) : (
                     <div style={{ width: "100%" }}>
                       <TeamLogo id={team.id} className="center" />
