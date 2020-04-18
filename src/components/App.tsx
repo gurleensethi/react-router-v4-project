@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home } from "./Home";
-import { Players } from "./Players";
-import { Teams } from "./Teams";
 import { NavBar } from "./NavBar";
-import { TeamPage } from "./TeamPage";
-import { Articles } from "./Articles";
+import { dynamicImport } from "./DynamicImport";
+
+const Players = dynamicImport(() => import("./Players"));
+const Teams = dynamicImport(() => import("./Teams"));
+const TeamPage = dynamicImport(() => import("./TeamPage"));
+const Articles = dynamicImport(() => import("./Articles"));
+const Home = dynamicImport(() => import("./Home"));
 
 class App extends Component {
   render() {

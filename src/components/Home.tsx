@@ -3,7 +3,7 @@ import { TeamLogo } from "./TeamLogo";
 import { getTeamNames } from "../api";
 import { Link } from "react-router-dom";
 
-export const Home: FunctionComponent = (props) => {
+const Home: FunctionComponent = (props) => {
   const [teamNames, setTeamNames] = React.useState<string[]>([]);
   React.useEffect(() => {
     getTeamNames().then((names) => setTeamNames(names));
@@ -25,3 +25,5 @@ export const Home: FunctionComponent = (props) => {
     </div>
   );
 };
+
+export default Home;

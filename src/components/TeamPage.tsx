@@ -11,7 +11,7 @@ interface State {
   teamNames: string[];
 }
 
-export class TeamPage extends Component<
+export default class TeamPage extends Component<
   RouteComponentProps<{ teamId: string }>,
   State
 > {

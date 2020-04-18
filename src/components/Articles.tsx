@@ -5,7 +5,7 @@ import { RouteComponentProps, Route } from "react-router-dom";
 import { Article } from "./Article";
 import { Loading } from "./Loading";
 
-export class Articles extends Component<
+export default class Articles extends Component<
   RouteComponentProps<{ teamId: string }>,
   { loading: boolean; articles: any[] }
 > {

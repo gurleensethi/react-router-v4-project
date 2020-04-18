@@ -6,7 +6,7 @@ import { TeamLogo } from "./TeamLogo";
 import { Team } from "./Team";
 import { Loading } from "./Loading";
 
-export const Teams: FunctionComponent<RouteComponentProps> = (props) => {
+const Teams: FunctionComponent<RouteComponentProps> = (props) => {
   const [teams, setTeams] = React.useState<any[]>([]);
   const [isLoading, setLoading] = React.useState<boolean>(true);
   React.useEffect(() => {
@@ -73,3 +73,5 @@ export const Teams: FunctionComponent<RouteComponentProps> = (props) => {
     </div>
   );
 };
+
+export default Teams;
